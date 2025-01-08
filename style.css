@@ -1,3 +1,39 @@
 #root {
-  color: red;
+  font-family: sans-serif;
+  background-color:#FFFFFF;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+body{
+  background-color: #F6F6F6;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.title{
+  border: 2.5px solid black;
+  border-radius: 10px;
+ text-align: center;
+ padding-top: 1rem;
+ padding-bottom: 1rem;
+ margin-top: 0;
+}
+section {
+  width: 300px;
+}
+
+#summary{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: rgb(119, 118, 118);
+}
+
+.img {
+  display: flex;
+  width: auto;
+  margin: 0 auto;
 }
