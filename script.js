@@ -15,7 +15,7 @@ function makePageForEpisodes(episodeList) {
     const formattedNumber = String(episode.number).padStart(2, "0");
     title.textContent = `${episode.name} - S${formattedSeason}E${formattedNumber}`;
 
-    filmCard.getElementById("summary").textContent = episode.summary;
+    filmCard.getElementById("summary").innerHTML = episode.summary;
     filmCard.querySelector("img").src = episode.image.medium;
 
     document.body.appendChild(filmCard);
