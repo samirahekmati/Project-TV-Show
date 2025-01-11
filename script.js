@@ -5,6 +5,7 @@ function setup() {
 }
 
 function makePageForEpisodes(episodeList) {
+  const main = document.querySelector('main');
   for (const episode of episodeList) {
     const filmCard = document
       .getElementById("film-card-template")
@@ -18,7 +19,7 @@ function makePageForEpisodes(episodeList) {
     filmCard.getElementById("summary").innerHTML = episode.summary;
     filmCard.querySelector("img").src = episode.image.medium;
 
-    document.body.appendChild(filmCard);
+    main.appendChild(filmCard);
   }
 }
 
