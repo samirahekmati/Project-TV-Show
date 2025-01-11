@@ -1,5 +1,5 @@
 body {
-  background-color: #f6f6f6;
+  background-color: #dadada;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -10,6 +10,7 @@ body {
 }
 main {
   width: 80%;
+
   margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
@@ -41,6 +42,7 @@ button {
 select>option {
   background-color: rgba(0, 70, 128, 0.61);
 }
+
 section {
   flex: 15rem;
   background-color: #f0eeee;
@@ -55,6 +57,7 @@ section {
   flex-wrap: wrap;
   flex: 1fr;
   gap: 1.5rem;
+
 }
 
 .title {

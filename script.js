@@ -24,8 +24,12 @@ function searchEpisodes() {
 }
 
 function makePageForEpisodes(episodeList) {
+
   const main = document.getElementById('all-episodes');
   main.innerHTML = '';
+
+  const main = document.querySelector('main');
+
   for (const episode of episodeList) {
     const filmCard = document
       .getElementById("film-card-template")
