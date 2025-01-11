@@ -10,6 +10,7 @@ body {
 }
 main {
   width: 80%;
+
   margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
@@ -21,23 +22,34 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 5%;
+
+  gap: 1rem;
 }
-#input-container input, button {
+#input-container input, button, select {
+
+
   border: none;
   outline: none;
   padding: 1rem 1.2rem;
   border-radius: 3px;
-  font-size: 1.2rem;
+
+  font-size: 1.1rem;
 }
-input {
+input, select {
   background-color: #053a574b;
-  flex: 70%;
+  /* flex: 1fr; */
+
 }
 button {
   background: #004d76;
   color: #f0eeee;
 }
+
+select>option {
+  background-color: rgba(0, 70, 128, 0.61);
+}
+
+
 section {
   flex: 15rem;
   background-color: #f0eeee;

@@ -2,11 +2,17 @@
 function setup() {
   const allEpisodes = getAllEpisodes();
   searchEpisodes();
+
+  selectEpisode();
+
   makePageForEpisodes(allEpisodes);
 }
 
 const inputEl = document.getElementById('input-el');
-const searchBtn = document.querySelector('button');
+
+const searchCount = document.querySelector('#results-count');
+
+
 
 function searchEpisodes() {
   const allEpisodes = getAllEpisodes();
@@ -18,12 +24,20 @@ function searchEpisodes() {
     });
 
     makePageForEpisodes(matchingEpisodes);
+
+    updateEpisodeCount(matchingEpisodes.length, allEpisodes.length);
+
   })
 }
 
 function makePageForEpisodes(episodeList) {
+
+
   const main = document.getElementById('all-episodes');
   main.innerHTML = '';
+
+  const main = document.querySelector('main');
+
 
   for (const episode of episodeList) {
     const filmCard = document
@@ -40,6 +54,35 @@ function makePageForEpisodes(episodeList) {
 
     main.appendChild(filmCard);
   }
+}
+
+const selectEpisode = () => {
+  const allEpisodes = getAllEpisodes();
+  const select = document.getElementById('select-episode');
+
+  allEpisodes.forEach(episode => {
+    const option = document.createElement('option');
+    const formattedSeason = String(episode.season).padStart(2, "0");
+    const formattedNumber = String(episode.number).padStart(2, "0");
+    option.textContent = `S${formattedSeason}E${formattedNumber} - ${episode.name}`;
+    option.value = episode.id;
+    select.appendChild(option);
+  });
+
+  select.addEventListener('change', (ev) => {
+    if(ev.target.value === 'all') {
+      makePageForEpisodes(allEpisodes);
+    }
+    else {
+      const selectEpisode = allEpisodes.find(epsd => epsd.id == ev.target.value);
+      makePageForEpisodes([selectEpisode]);
+    }
+  });
+  
+}
+
+const updateEpisodeCount = (episodeCount, totalEpisodes) => {
+  searchCount.textContent = `Matching episodes: ${episodeCount} / ${totalEpisodes}`;
 }
 
 window.onload = setup;
