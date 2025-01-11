@@ -2,12 +2,17 @@
 function setup() {
   const allEpisodes = getAllEpisodes();
   searchEpisodes();
+
   selectEpisode();
+
   makePageForEpisodes(allEpisodes);
 }
 
 const inputEl = document.getElementById('input-el');
+
 const searchCount = document.querySelector('#results-count');
+
+
 
 function searchEpisodes() {
   const allEpisodes = getAllEpisodes();
@@ -19,16 +24,20 @@ function searchEpisodes() {
     });
 
     makePageForEpisodes(matchingEpisodes);
+
     updateEpisodeCount(matchingEpisodes.length, allEpisodes.length);
+
   })
 }
 
 function makePageForEpisodes(episodeList) {
 
+
   const main = document.getElementById('all-episodes');
   main.innerHTML = '';
 
   const main = document.querySelector('main');
+
 
   for (const episode of episodeList) {
     const filmCard = document

@@ -22,26 +22,33 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   gap: 1rem;
 }
 #input-container input, button, select {
+
+
   border: none;
   outline: none;
   padding: 1rem 1.2rem;
   border-radius: 3px;
+
   font-size: 1.1rem;
 }
 input, select {
   background-color: #053a574b;
   /* flex: 1fr; */
+
 }
 button {
   background: #004d76;
   color: #f0eeee;
 }
+
 select>option {
   background-color: rgba(0, 70, 128, 0.61);
 }
+
 
 section {
   flex: 15rem;
@@ -57,7 +64,6 @@ section {
   flex-wrap: wrap;
   flex: 1fr;
   gap: 1.5rem;
-
 }
 
 .title {
