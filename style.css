@@ -1,18 +1,57 @@
 body {
   background-color: #f6f6f6;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-between;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-left: 27rem;
+  margin-right: 27rem;
   font-family: sans-serif;
+  font-size: 1.2rem;
+ 
+}
+.search-container{
+  padding: 20px 0;
+
+}
+#search-input {
+  border: none;
+  padding: 10px;
+  width: 200px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  outline: none;
+  box-shadow: 1px 0px 1px 1px black;
+  background-color: white;
+
+ 
+
+}
+
+.search-input:focus {
+  border: 2px solid #007bff;
+}
+
+.search-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 1rem;
+}
+#episodes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  width: 100%; 
 }
 section {
   width: 300px;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 10px;
   margin-bottom: 2rem;
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 15px;
 }
 
 .title {
