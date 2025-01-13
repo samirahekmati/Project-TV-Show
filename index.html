@@ -9,18 +9,16 @@
   </head>
 
   <body>
-    <template id="film-card-template">
-      <section>
-        <h3 class="title">Film title</h3>
-        <img class="img" />
-        <p id="summary"></p>
-      </section>
-    </template>
-
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search...">
+      <button class="search-button">Search</button>
+  </div>
+    <!-- Container to hold all episode cards -->
+    <div id="episodes-container" class="episodes-container"></div>
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
     <script src="episodes.js"></script>
 
-    <!-- Loads YOUR javascript code -->
+    <!-- Loads YOUR JavaScript code -->
     <script src="script.js"></script>
   </body>
 </html>
