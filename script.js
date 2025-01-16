@@ -7,13 +7,16 @@ let searchTerm = "";
 function setup() {
   allEpisodes = getAllEpisodes(); 
   makePageForEpisodes(allEpisodes); 
-
+  populateEpisodeSelector(allEpisodes) 
   const input = document.getElementById("search-input");
   input.addEventListener("keyup", function () {
     searchTerm = input.value.toLowerCase();
-    const filteredEpisodes = filterEpisodes(allEpisodes, searchTerm); 
-    makePageForEpisodes(filteredEpisodes); 
+    let filteredEpisodes = filterEpisodes(allEpisodes, searchTerm);
+    makePageForEpisodes(filteredEpisodes);
+
+  
     displayMatchCount(filteredEpisodes.length, allEpisodes.length); // Update match count
+
   });
 }
 
@@ -25,13 +28,55 @@ function filterEpisodes(episodeList, term) {
       episode.summary.toLowerCase().includes(term) // if  match  summary
   );
 }
+// Create the episode selection menu
+function populateEpisodeSelector(episodes) {
+  const selector = document.getElementById("episode-option-selector");
+  selector.innerHTML = '<option value="">Show All Episodes</option>';
+  episodes.forEach((episode) => {
+    const option = document.createElement("option");
+    const formattedSeason = String(episode.season).padStart(2, "0");
+    const formattedNumber = String(episode.number).padStart(2, "0");
+    option.value = `${episode.season}-${episode.number}`;
+    option.textContent = `S${formattedSeason}E${formattedNumber} - ${episode.name}`;
+    selector.appendChild(option);
+  });
+}
+
+
+// updating the display when an episode is selected 
+const episodeSelector = document.getElementById("episode-option-selector");
+episodeSelector.addEventListener("change", function () {
+  const selectedValue = episodeSelector.value; // Get the value of the selected option
+
+  if (selectedValue === "") {
+    makePageForEpisodes(allEpisodes); // Show all episodes
+  } else {
+    const [season, number] = selectedValue.split("-");
+    const selectedEpisode = allEpisodes.find(
+      (ep) =>
+        ep.season === parseInt(season) &&
+        ep.number === parseInt(number)
+    );
+    makePageForEpisodes(selectedEpisode ? [selectedEpisode] : []);
+    const matchCount = document.getElementById("NumsOfEpisodes");
+  matchCount.style.display = "none";
+ 
+  }
+
+  // If the `episodeHandler` object is implemented, update it here
+  if (typeof episodeHandler !== "undefined") {
+    episodeHandler.updateSelectedEpisode(selectedValue);
+   
+  }
+});
+
+
 
 
 // create HTML page and disply the elements
 function makePageForEpisodes(episodeList) {
   const container = document.getElementById("episodes-container");
   container.innerHTML = ""; // Clear previous episodes
-
   for (const episode of episodeList) {
     const filmCard = document.createElement("section");
     filmCard.className = "film-card";
@@ -57,10 +102,12 @@ function makePageForEpisodes(episodeList) {
     container.appendChild(filmCard);
   }
 }
-
+ 
+// Update the user interface with the number of filtered episodes currently displayed versus the total number of episodes available
 function displayMatchCount(filteredCount, totalCount) {
-  const matchCount = document.getElementById("match-count");
-  matchCount.textContent = `Showing ${filteredCount} out of ${totalCount} episodes`;
+  const matchCount = document.getElementById("NumsOfEpisodes");
+  matchCount.innerHTML = "";
+  matchCount.innerHTML = `${filteredCount}/${totalCount}`;
 }
 
 window.onload = setup;

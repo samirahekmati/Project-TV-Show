@@ -1,6 +1,6 @@
 body {
   background-color: #f6f6f6;
-  margin-left: 27rem;
+  margin-left: 22rem;
   margin-right: 27rem;
   font-family: sans-serif;
   font-size: 1.2rem;
@@ -8,7 +8,22 @@ body {
 }
 .search-container{
   padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#episode-selector{
+  border-radius: 50px;
+ 
+}
+#episode-selector #episode-option-selector {
+  padding: 10px 20px;
+  box-shadow: 1px 0px 1px 1px black;
+  border-radius: 50px;
+  border: none;
 
+
+ 
 }
 #search-input {
   border: none;
@@ -20,24 +35,21 @@ body {
   outline: none;
   box-shadow: 1px 0px 1px 1px black;
   background-color: white;
+}
+#episode-search{
+  margin-left: 39%;
+
+}
+
+#NumsOfEpisodes{
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.1);
+  color:black;
+  border-radius: 15px;
+  margin-left: 8px;
+  height: 20px;
+  padding: 10px 20px;
 
  
-
-}
-
-.search-input:focus {
-  border: 2px solid #007bff;
-}
-
-.search-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 50px;
-  cursor: pointer;
-  margin-left: 8px;
-  font-size: 1rem;
 }
 #episodes-container {
   display: grid;

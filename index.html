@@ -7,18 +7,32 @@
     <link href="style.css" rel="stylesheet" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
-
   <body>
+    <!-- Search container to hold search bar, dropdown selector, and match count -->
     <div class="search-container">
-      <input type="text" id="search-input" placeholder="Search...">
-      <button class="search-button">Search</button>
-  </div>
-    <!-- Container to hold all episode cards -->
+      
+      <!-- Dropdown to select an episode -->
+      <div id="episode-selector">
+        <select name="episode-selector" id="episode-option-selector"></select>
+      </div>
+
+      <!-- Search input for filtering episodes -->
+      <div id="episode-search">
+        <input type="text" id="search-input" placeholder="Search..." />
+      </div>
+
+      <!-- Display the number of matching episodes out of total episodes -->
+      <div id="NumsOfEpisodes">73/73</div>
+    </div>
+
+    <!-- Container to hold all episode cards dynamically generated via JavaScript -->
     <div id="episodes-container" class="episodes-container"></div>
-    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
+
+    <!-- Script to load provided function getAllEpisodes() -->
     <script src="episodes.js"></script>
 
-    <!-- Loads YOUR JavaScript code -->
+    <!-- Script to load your custom JavaScript functionality -->
     <script src="script.js"></script>
+  </body>
   </body>
 </html>
