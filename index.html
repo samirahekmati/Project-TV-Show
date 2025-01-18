@@ -8,42 +8,39 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
 
+  
   <body>
-
-
-    <main>
-
-      <div id="input-container">
-
-        <select name="" id="select-show">
-          <!-- <option value="all">Select a show</option> -->
+    <main id="root">
+      <!-- This div contains all the select and search inputs to let the user interact with the page to let them search and select the shows and episodes -->
+      <div id="input-div">
+        <select name="" id="show-dropdown"></select>
+        <select id="select-el">
+          <option select value="all" id="selected">Select one episode...</option>
         </select>
-
-        <!-- Level 200-->
-        <select name="" id="select-episode" >
-          <option value="all" id="selected" >All episodes ...</option>
-        </select>
-        <input type="text" id="input-el" placeholder="Search episodes...">
-        <p id="results-count"></p>
+        <input type="text" placeholder="Search episodes..." id="inputEl">
+        <p id="display"></p>
       </div>
-
-      <!-- Level 100 -->
-      <div id="all-episodes"></div>
+  
+      <!-- These two div toggle between the shows and episodes. -->
+      <div id="all-episodes">
+      </div>
+      <div id="all-shows">
+      </div>
+  
     </main>
-
-
-    <template id="film-card-template">
+  
+    <!-- The template is being to used to display the episode info. -->
+    <template id="film-card">
       <section>
-        <h3 class="title">Film title</h3>
-        <img class="img" />
+        <a href="">
+          <h3>Film title</h3>
+        </a>
+        <img src="" alt="">
         <p id="summary"></p>
       </section>
+      </section>
     </template>
-
-    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-    <!--<script src="episodes.js"></script> -->
-
-    <!-- Loads YOUR javascript code -->
+  
     <script src="script.js"></script>
-  </body>
-</html>
+  </body> 
+</html> 
