@@ -99,8 +99,14 @@ section {
 }
 
 .show-title {
-  color: rgb(7, 9, 131);
+  color: rgb(2, 2, 19);
   width: 100%;
+  text-align: center;
+  background-color: #E4E4E4;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 10px;
+  
 }
 
 .image {
@@ -119,6 +125,7 @@ section {
 .summary {
   font-size: 0.9rem;
   width: 50%;
+  color: rgb(99, 97, 97);
 }
 
 .aside-details {
@@ -132,6 +139,7 @@ section {
   height: 50%;
   box-shadow: 1px 1px 3px rgb(63, 63, 63);
   border-radius: 3px;
+  color: rgb(99, 97, 97);
 }
 
 .title {
@@ -141,7 +149,9 @@ section {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-top: 0;
+  border: red solid 2px;
 }
+
 
 #summary {
   padding-left: 1rem;
