@@ -203,7 +203,7 @@ function populateShowSelector() {
   defaultOpt.textContent = "Select a show";
   defaultOpt.value = "all";
   showSelectEl.appendChild(defaultOpt);
-
+  
   allShows.forEach((show) => {
     const option = document.createElement("option");
     option.value = show.id;
@@ -214,6 +214,7 @@ function populateShowSelector() {
   document.getElementById("input-div").prepend(showSelectEl);
 
   showSelectEl.addEventListener("change", async (event) => {
+    allShowsContainer.style.display = "none";
     const selectedShowId = event.target.value;
     await fetchEpisodesForShow(selectedShowId);
     makePageForEpisodes(allEpisodes);
@@ -310,7 +311,7 @@ function searchAvailableShows(showsToDisplay = allShows) { // Default to allShow
     h2.addEventListener("click", async () => {
       await fetchEpisodesForShow(show.id);
       makePageForEpisodes(allEpisodes);
-
+      
       showSelectEl.value = show.id;
       showSelectEl.dispatchEvent(new Event("change"));
 
